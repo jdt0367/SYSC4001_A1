@@ -23,11 +23,6 @@ int main(int argc, char** argv) {
     std::string duration; //duration of current ISR
     int currTime = 0;
     int context = 10; //Duration of context save/restore
-
-    bool mode; //kernel mode
-
-
-
     /******************************************************************/
 
     //parse each line of the input trace file
@@ -50,14 +45,19 @@ int main(int argc, char** argv) {
             std::pair<std::string, int> boilerRtn = intr_boilerplate(currTime, duration_intr, context, vectors);
             currTime = boilerRtn.second;
             execution += boilerRtn.first;
+            //call driver
+            execution += std::to_string(currTime) + ", " + std::to_string(24) + ", call device driver\n"; //TODO: fix time
+            currTime += 24;
+            //execute
+            execution += std::to_string(currTime) + ", " + std::to_string(delays[duration_intr]) + ", ISR activity\n";
+            currTime += delays[duration_intr];
         }else if(activity == "END_IO"){
-
-        }else{
-            //panic
+            execution += std::to_string(currTime) + ", " + std::to_string(1) + ", IRET\n";
+            currTime++;
+            execution += std::to_string(currTime) + ", " + std::to_string(delays[duration_intr]) + ", end of I/O " + std::to_string(duration_intr) + ": interrupt\n";
+            currTime += delays[duration_intr];
         }
-
         /************************************************************************/
-
     }
 
     input_file.close();
