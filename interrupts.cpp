@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
         }else if(activity == "SYSCALL"){
             std::pair<std::string, int> boilerRtn = intr_boilerplate(currTime, duration_intr, delays[duration_intr], vectors);
             currTime = boilerRtn.second;
-            write_output(boilerRtn.first);
+            execution += boilerRtn.first;
         }else if(activity == "END_IO"){
 
         }else{
