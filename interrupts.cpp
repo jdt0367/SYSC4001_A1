@@ -46,7 +46,9 @@ int main(int argc, char** argv) {
         if(activity == "CPU"){
 
         }else if(activity == "SYSCALL"){
-            intr_boilerplate(currTime, duration_intr, delays[duration_intr], vectors);
+            std::pair<std::string, int> boilerRtn = intr_boilerplate(currTime, duration_intr, delays[duration_intr], vectors);
+            currTime = boilerRtn.second;
+            write_output(boilerRtn.first);
         }else if(activity == "END_IO"){
 
         }else{
