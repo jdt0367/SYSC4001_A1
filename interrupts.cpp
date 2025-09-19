@@ -19,6 +19,10 @@ int main(int argc, char** argv) {
     std::string execution;  //!< string to accumulate the execution output
 
     /******************ADD YOUR VARIABLES HERE*************************/
+    std::string address; //device address
+    std::string duration; //duration of current ISR
+
+    bool mode; //kernel mode
 
 
 
@@ -29,8 +33,24 @@ int main(int argc, char** argv) {
         auto [activity, duration_intr] = parse_trace(trace);
 
         /******************ADD YOUR SIMULATION CODE HERE*************************/
+        //if activity is CPU, get duration
+        //if activity is SYSCALL, switch to kernel mode
+            //get device vector table position and multiply by 2 to get "memory position"
+            //save context
+            //fetch address with vector table position
+            //do something with ISR????
+            //store duration, then keep it until we get an END_IO call
+        //if activity is END IO, switch out of kernel mode and output the end duration
 
+        if(activity == "CPU"){
 
+        }else if(activity == "SYSCALL"){
+            
+        }else if(activity == "END_IO"){
+
+        }else{
+            //panic
+        }
 
         /************************************************************************/
 
