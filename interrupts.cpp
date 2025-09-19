@@ -22,6 +22,7 @@ int main(int argc, char** argv) {
     std::string address; //interrupt numb
     std::string duration; //duration of current ISR
     int currTime = 0;
+    int context = 10; //Duration of context save/restore
 
     bool mode; //kernel mode
 
@@ -46,7 +47,7 @@ int main(int argc, char** argv) {
         if(activity == "CPU"){
 
         }else if(activity == "SYSCALL"){
-            std::pair<std::string, int> boilerRtn = intr_boilerplate(currTime, duration_intr, delays[duration_intr], vectors);
+            std::pair<std::string, int> boilerRtn = intr_boilerplate(currTime, duration_intr, context, vectors);
             currTime = boilerRtn.second;
             execution += boilerRtn.first;
         }else if(activity == "END_IO"){
