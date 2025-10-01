@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
         //if activity is END IO, switch out of kernel mode and output the end duration
 
         if(activity == "CPU"){
-
+            execution += std::to_string(currTime) + ", " + std::to_string(duration_intr) + ", CPU activity\n";
         }else if(activity == "SYSCALL"){
             std::pair<std::string, int> boilerRtn = intr_boilerplate(currTime, duration_intr, context, vectors);
             currTime = boilerRtn.second;
