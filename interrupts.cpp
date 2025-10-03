@@ -41,13 +41,11 @@ int main(int argc, char** argv) {
 
         if(activity == "CPU"){
             execution += std::to_string(currTime) + ", " + std::to_string(duration_intr) + ", CPU activity\n";
+            currTime += duration_intr;
         }else if(activity == "SYSCALL"){
             std::pair<std::string, int> boilerRtn = intr_boilerplate(currTime, duration_intr, context, vectors);
             currTime = boilerRtn.second;
             execution += boilerRtn.first;
-            //call driver
-            execution += std::to_string(currTime) + ", " + std::to_string(24) + ", call device driver\n"; //TODO: fix time
-            currTime += 24;
             //execute
             execution += std::to_string(currTime) + ", " + std::to_string(delays[duration_intr]) + ", ISR activity\n";
             currTime += delays[duration_intr];
