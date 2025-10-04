@@ -41,7 +41,6 @@ int main(int argc, char** argv) {
             //save context
             //fetch address with vector table position
             //do something with ISR????
-            //store duration, then keep it until we get an END_IO call
         //if activity is END IO, switch out of kernel mode and output the end duration
         //assume syscalls will alternate between reading and printing
 
@@ -59,12 +58,12 @@ int main(int argc, char** argv) {
             //execute
             if(ISR){
                 //writing
-                //push data to buffer 30%
-                execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.3)) + ", Pushing data from memory\n";
-                currTime += round(delays[duration_intr] * 0.3);
                 //set flag - printing in progress 10%
                 execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.1)) + ", Set device flag\n";
                 currTime += round(delays[duration_intr] * 0.1);
+                //push data to buffer 30%
+                execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.3)) + ", Pushing data from memory\n";
+                currTime += round(delays[duration_intr] * 0.3);
                 //call device driver 60%
                 execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.6)) + ", Call device driver\n";
                 currTime += round(delays[duration_intr] * 0.6);
