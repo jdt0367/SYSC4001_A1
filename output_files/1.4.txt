@@ -1,0 +1,443 @@
+0, 86, CPU burst
+86, 1, Checking if interrupts are enabled
+87, 1, Checking device flag
+88, 1, switch to kernel mode
+89, 10, context saved
+99, 1, find vector 9 in memory position 0x0012
+100, 1, load address 0X036C into the PC
+101, 16.000000, Set device flag
+117, 78.000000, Call device driver
+211, 62.000000, Reading data to memory
+414, 61, CPU burst
+475, 1, IRET
+476, 156, Clearing flag for end of I/O 9: interrupt
+632, 27, CPU burst
+659, 1, Checking if interrupts are enabled
+660, 1, Checking device flag
+661, 1, switch to kernel mode
+662, 10, context saved
+672, 1, find vector 17 in memory position 0x0022
+673, 1, load address 0X05B3 into the PC
+674, 24.000000, Set device flag
+698, 71.000000, Pushing data from memory
+769, 141.000000, Call device driver
+1145, 19, CPU burst
+1164, 1, IRET
+1165, 235, Clearing flag for end of I/O 17: interrupt
+1400, 92, CPU burst
+1492, 1, Checking if interrupts are enabled
+1493, 1, Checking device flag
+1494, 1, switch to kernel mode
+1495, 10, context saved
+1505, 1, find vector 8 in memory position 0x0010
+1506, 1, load address 0X06EF into the PC
+1507, 100.000000, Set device flag
+1607, 500.000000, Call device driver
+2207, 400.000000, Reading data to memory
+3507, 36, CPU burst
+3543, 1, IRET
+3544, 1000, Clearing flag for end of I/O 8: interrupt
+4544, 19, CPU burst
+4563, 1, Checking if interrupts are enabled
+4564, 1, Checking device flag
+4565, 1, switch to kernel mode
+4566, 10, context saved
+4576, 1, find vector 1 in memory position 0x0002
+4577, 1, load address 0X029C into the PC
+4578, 10.000000, Set device flag
+4588, 30.000000, Pushing data from memory
+4618, 60.000000, Call device driver
+4778, 33, CPU burst
+4811, 1, IRET
+4812, 100, Clearing flag for end of I/O 1: interrupt
+4912, 90, CPU burst
+5002, 1, Checking if interrupts are enabled
+5003, 1, Checking device flag
+5004, 1, switch to kernel mode
+5005, 10, context saved
+5015, 1, find vector 20 in memory position 0x0028
+5016, 1, load address 0X07B7 into the PC
+5017, 0.000000, Set device flag
+5017, 0.000000, Call device driver
+5017, 0.000000, Reading data to memory
+5017, 13, CPU burst
+5030, 1, IRET
+5031, 0, Clearing flag for end of I/O 20: interrupt
+5031, 12, CPU burst
+5043, 1, Checking if interrupts are enabled
+5044, 1, Checking device flag
+5045, 1, switch to kernel mode
+5046, 10, context saved
+5056, 1, find vector 13 in memory position 0x001A
+5057, 1, load address 0X06C7 into the PC
+5058, 64.000000, Set device flag
+5122, 191.000000, Pushing data from memory
+5313, 382.000000, Call device driver
+6331, 23, CPU burst
+6354, 1, IRET
+6355, 636, Clearing flag for end of I/O 13: interrupt
+6991, 51, CPU burst
+7042, 1, Checking if interrupts are enabled
+7043, 1, Checking device flag
+7044, 1, switch to kernel mode
+7045, 10, context saved
+7055, 1, find vector 10 in memory position 0x0014
+7056, 1, load address 0X07B0 into the PC
+7057, 56.000000, Set device flag
+7113, 282.000000, Call device driver
+7451, 226.000000, Reading data to memory
+8184, 49, CPU burst
+8233, 1, IRET
+8234, 564, Clearing flag for end of I/O 10: interrupt
+8798, 87, CPU burst
+8885, 1, Checking if interrupts are enabled
+8886, 1, Checking device flag
+8887, 1, switch to kernel mode
+8888, 10, context saved
+8898, 1, find vector 5 in memory position 0x000A
+8899, 1, load address 0X048B into the PC
+8900, 21.000000, Set device flag
+8921, 63.000000, Pushing data from memory
+8984, 127.000000, Call device driver
+9322, 55, CPU burst
+9377, 1, IRET
+9378, 211, Clearing flag for end of I/O 5: interrupt
+9589, 17, CPU burst
+9606, 1, Checking if interrupts are enabled
+9607, 1, Checking device flag
+9608, 1, switch to kernel mode
+9609, 10, context saved
+9619, 1, find vector 3 in memory position 0x0006
+9620, 1, load address 0X042B into the PC
+9621, 30.000000, Set device flag
+9651, 150.000000, Call device driver
+9831, 120.000000, Reading data to memory
+10221, 66, CPU burst
+10287, 1, IRET
+10288, 300, Clearing flag for end of I/O 3: interrupt
+10588, 93, CPU burst
+10681, 1, Checking if interrupts are enabled
+10682, 1, Checking device flag
+10683, 1, switch to kernel mode
+10684, 10, context saved
+10694, 1, find vector 20 in memory position 0x0028
+10695, 1, load address 0X07B7 into the PC
+10696, 0.000000, Set device flag
+10696, 0.000000, Pushing data from memory
+10696, 0.000000, Call device driver
+10696, 12, CPU burst
+10708, 1, IRET
+10709, 0, Clearing flag for end of I/O 20: interrupt
+10709, 88, CPU burst
+10797, 1, Checking if interrupts are enabled
+10798, 1, Checking device flag
+10799, 1, switch to kernel mode
+10800, 10, context saved
+10810, 1, find vector 14 in memory position 0x001C
+10811, 1, load address 0X0165 into the PC
+10812, 46.000000, Set device flag
+10858, 228.000000, Call device driver
+11132, 182.000000, Reading data to memory
+11725, 79, CPU burst
+11804, 1, IRET
+11805, 456, Clearing flag for end of I/O 14: interrupt
+12261, 93, CPU burst
+12354, 1, Checking if interrupts are enabled
+12355, 1, Checking device flag
+12356, 1, switch to kernel mode
+12357, 10, context saved
+12367, 1, find vector 1 in memory position 0x0002
+12368, 1, load address 0X029C into the PC
+12369, 10.000000, Set device flag
+12379, 30.000000, Pushing data from memory
+12409, 60.000000, Call device driver
+12569, 94, CPU burst
+12663, 1, IRET
+12664, 100, Clearing flag for end of I/O 1: interrupt
+12764, 68, CPU burst
+12832, 1, Checking if interrupts are enabled
+12833, 1, Checking device flag
+12834, 1, switch to kernel mode
+12835, 10, context saved
+12845, 1, find vector 3 in memory position 0x0006
+12846, 1, load address 0X042B into the PC
+12847, 30.000000, Set device flag
+12877, 150.000000, Call device driver
+13057, 120.000000, Reading data to memory
+13447, 58, CPU burst
+13505, 1, IRET
+13506, 300, Clearing flag for end of I/O 3: interrupt
+13806, 48, CPU burst
+13854, 1, Checking if interrupts are enabled
+13855, 1, Checking device flag
+13856, 1, switch to kernel mode
+13857, 10, context saved
+13867, 1, find vector 14 in memory position 0x001C
+13868, 1, load address 0X0165 into the PC
+13869, 46.000000, Set device flag
+13915, 137.000000, Pushing data from memory
+14052, 274.000000, Call device driver
+14782, 87, CPU burst
+14869, 1, IRET
+14870, 456, Clearing flag for end of I/O 14: interrupt
+15326, 72, CPU burst
+15398, 1, Checking if interrupts are enabled
+15399, 1, Checking device flag
+15400, 1, switch to kernel mode
+15401, 10, context saved
+15411, 1, find vector 8 in memory position 0x0010
+15412, 1, load address 0X06EF into the PC
+15413, 100.000000, Set device flag
+15513, 500.000000, Call device driver
+16113, 400.000000, Reading data to memory
+17413, 82, CPU burst
+17495, 1, IRET
+17496, 1000, Clearing flag for end of I/O 8: interrupt
+18496, 99, CPU burst
+18595, 1, Checking if interrupts are enabled
+18596, 1, Checking device flag
+18597, 1, switch to kernel mode
+18598, 10, context saved
+18608, 1, find vector 18 in memory position 0x0024
+18609, 1, load address 0X060A into the PC
+18610, 12.000000, Set device flag
+18622, 37.000000, Pushing data from memory
+18659, 74.000000, Call device driver
+18856, 65, CPU burst
+18921, 1, IRET
+18922, 123, Clearing flag for end of I/O 18: interrupt
+19045, 24, CPU burst
+19069, 1, Checking if interrupts are enabled
+19070, 1, Checking device flag
+19071, 1, switch to kernel mode
+19072, 10, context saved
+19082, 1, find vector 12 in memory position 0x0018
+19083, 1, load address 0X03B9 into the PC
+19084, 15.000000, Set device flag
+19099, 73.000000, Call device driver
+19186, 58.000000, Reading data to memory
+19375, 26, CPU burst
+19401, 1, IRET
+19402, 145, Clearing flag for end of I/O 12: interrupt
+19547, 54, CPU burst
+19601, 1, Checking if interrupts are enabled
+19602, 1, Checking device flag
+19603, 1, switch to kernel mode
+19604, 10, context saved
+19614, 1, find vector 11 in memory position 0x0016
+19615, 1, load address 0X01F8 into the PC
+19616, 52.000000, Set device flag
+19668, 157.000000, Pushing data from memory
+19825, 314.000000, Call device driver
+20662, 78, CPU burst
+20740, 1, IRET
+20741, 523, Clearing flag for end of I/O 11: interrupt
+21264, 66, CPU burst
+21330, 1, Checking if interrupts are enabled
+21331, 1, Checking device flag
+21332, 1, switch to kernel mode
+21333, 10, context saved
+21343, 1, find vector 15 in memory position 0x001E
+21344, 1, load address 0X0584 into the PC
+21345, 7.000000, Set device flag
+21352, 34.000000, Call device driver
+21393, 27.000000, Reading data to memory
+21481, 79, CPU burst
+21560, 1, IRET
+21561, 68, Clearing flag for end of I/O 15: interrupt
+21629, 82, CPU burst
+21711, 1, Checking if interrupts are enabled
+21712, 1, Checking device flag
+21713, 1, switch to kernel mode
+21714, 10, context saved
+21724, 1, find vector 4 in memory position 0x0008
+21725, 1, load address 0X0292 into the PC
+21726, 25.000000, Set device flag
+21751, 75.000000, Pushing data from memory
+21826, 150.000000, Call device driver
+22226, 88, CPU burst
+22314, 1, IRET
+22315, 250, Clearing flag for end of I/O 4: interrupt
+22565, 16, CPU burst
+22581, 1, Checking if interrupts are enabled
+22582, 1, Checking device flag
+22583, 1, switch to kernel mode
+22584, 10, context saved
+22594, 1, find vector 8 in memory position 0x0010
+22595, 1, load address 0X06EF into the PC
+22596, 100.000000, Set device flag
+22696, 500.000000, Call device driver
+23296, 400.000000, Reading data to memory
+24596, 26, CPU burst
+24622, 1, IRET
+24623, 1000, Clearing flag for end of I/O 8: interrupt
+25623, 22, CPU burst
+25645, 1, Checking if interrupts are enabled
+25646, 1, Checking device flag
+25647, 1, switch to kernel mode
+25648, 10, context saved
+25658, 1, find vector 18 in memory position 0x0024
+25659, 1, load address 0X060A into the PC
+25660, 12.000000, Set device flag
+25672, 37.000000, Pushing data from memory
+25709, 74.000000, Call device driver
+25906, 95, CPU burst
+26001, 1, IRET
+26002, 123, Clearing flag for end of I/O 18: interrupt
+26125, 63, CPU burst
+26188, 1, Checking if interrupts are enabled
+26189, 1, Checking device flag
+26190, 1, switch to kernel mode
+26191, 10, context saved
+26201, 1, find vector 18 in memory position 0x0024
+26202, 1, load address 0X060A into the PC
+26203, 12.000000, Set device flag
+26215, 62.000000, Call device driver
+26289, 49.000000, Reading data to memory
+26449, 18, CPU burst
+26467, 1, IRET
+26468, 123, Clearing flag for end of I/O 18: interrupt
+26591, 50, CPU burst
+26641, 1, Checking if interrupts are enabled
+26642, 1, Checking device flag
+26643, 1, switch to kernel mode
+26644, 10, context saved
+26654, 1, find vector 14 in memory position 0x001C
+26655, 1, load address 0X0165 into the PC
+26656, 46.000000, Set device flag
+26702, 137.000000, Pushing data from memory
+26839, 274.000000, Call device driver
+27569, 56, CPU burst
+27625, 1, IRET
+27626, 456, Clearing flag for end of I/O 14: interrupt
+28082, 83, CPU burst
+28165, 1, Checking if interrupts are enabled
+28166, 1, Checking device flag
+28167, 1, switch to kernel mode
+28168, 10, context saved
+28178, 1, find vector 16 in memory position 0x0020
+28179, 1, load address 0X02DF into the PC
+28180, 96.000000, Set device flag
+28276, 478.000000, Call device driver
+28850, 382.000000, Reading data to memory
+30093, 23, CPU burst
+30116, 1, IRET
+30117, 956, Clearing flag for end of I/O 16: interrupt
+31073, 80, CPU burst
+31153, 1, Checking if interrupts are enabled
+31154, 1, Checking device flag
+31155, 1, switch to kernel mode
+31156, 10, context saved
+31166, 1, find vector 15 in memory position 0x001E
+31167, 1, load address 0X0584 into the PC
+31168, 7.000000, Set device flag
+31175, 20.000000, Pushing data from memory
+31195, 41.000000, Call device driver
+31304, 98, CPU burst
+31402, 1, IRET
+31403, 68, Clearing flag for end of I/O 15: interrupt
+31471, 77, CPU burst
+31548, 1, Checking if interrupts are enabled
+31549, 1, Checking device flag
+31550, 1, switch to kernel mode
+31551, 10, context saved
+31561, 1, find vector 14 in memory position 0x001C
+31562, 1, load address 0X0165 into the PC
+31563, 46.000000, Set device flag
+31609, 228.000000, Call device driver
+31883, 182.000000, Reading data to memory
+32476, 11, CPU burst
+32487, 1, IRET
+32488, 456, Clearing flag for end of I/O 14: interrupt
+32944, 61, CPU burst
+33005, 1, Checking if interrupts are enabled
+33006, 1, Checking device flag
+33007, 1, switch to kernel mode
+33008, 10, context saved
+33018, 1, find vector 14 in memory position 0x001C
+33019, 1, load address 0X0165 into the PC
+33020, 46.000000, Set device flag
+33066, 137.000000, Pushing data from memory
+33203, 274.000000, Call device driver
+33933, 34, CPU burst
+33967, 1, IRET
+33968, 456, Clearing flag for end of I/O 14: interrupt
+34424, 32, CPU burst
+34456, 1, Checking if interrupts are enabled
+34457, 1, Checking device flag
+34458, 1, switch to kernel mode
+34459, 10, context saved
+34469, 1, find vector 7 in memory position 0x000E
+34470, 1, load address 0X00BD into the PC
+34471, 15.000000, Set device flag
+34486, 76.000000, Call device driver
+34577, 61.000000, Reading data to memory
+34775, 69, CPU burst
+34844, 1, IRET
+34845, 152, Clearing flag for end of I/O 7: interrupt
+34997, 79, CPU burst
+35076, 1, Checking if interrupts are enabled
+35077, 1, Checking device flag
+35078, 1, switch to kernel mode
+35079, 10, context saved
+35089, 1, find vector 20 in memory position 0x0028
+35090, 1, load address 0X07B7 into the PC
+35091, 0.000000, Set device flag
+35091, 0.000000, Pushing data from memory
+35091, 0.000000, Call device driver
+35091, 41, CPU burst
+35132, 1, IRET
+35133, 0, Clearing flag for end of I/O 20: interrupt
+35133, 63, CPU burst
+35196, 1, Checking if interrupts are enabled
+35197, 1, Checking device flag
+35198, 1, switch to kernel mode
+35199, 10, context saved
+35209, 1, find vector 7 in memory position 0x000E
+35210, 1, load address 0X00BD into the PC
+35211, 15.000000, Set device flag
+35226, 76.000000, Call device driver
+35317, 61.000000, Reading data to memory
+35515, 27, CPU burst
+35542, 1, IRET
+35543, 152, Clearing flag for end of I/O 7: interrupt
+35695, 85, CPU burst
+35780, 1, Checking if interrupts are enabled
+35781, 1, Checking device flag
+35782, 1, switch to kernel mode
+35783, 10, context saved
+35793, 1, find vector 11 in memory position 0x0016
+35794, 1, load address 0X01F8 into the PC
+35795, 52.000000, Set device flag
+35847, 157.000000, Pushing data from memory
+36004, 314.000000, Call device driver
+36841, 68, CPU burst
+36909, 1, IRET
+36910, 523, Clearing flag for end of I/O 11: interrupt
+37433, 23, CPU burst
+37456, 1, Checking if interrupts are enabled
+37457, 1, Checking device flag
+37458, 1, switch to kernel mode
+37459, 10, context saved
+37469, 1, find vector 14 in memory position 0x001C
+37470, 1, load address 0X0165 into the PC
+37471, 46.000000, Set device flag
+37517, 228.000000, Call device driver
+37791, 182.000000, Reading data to memory
+38384, 22, CPU burst
+38406, 1, IRET
+38407, 456, Clearing flag for end of I/O 14: interrupt
+38863, 29, CPU burst
+38892, 1, Checking if interrupts are enabled
+38893, 1, Checking device flag
+38894, 1, switch to kernel mode
+38895, 10, context saved
+38905, 1, find vector 17 in memory position 0x0022
+38906, 1, load address 0X05B3 into the PC
+38907, 24.000000, Set device flag
+38931, 71.000000, Pushing data from memory
+39002, 141.000000, Call device driver
+39378, 99, CPU burst
+39477, 1, IRET
+39478, 235, Clearing flag for end of I/O 17: interrupt
+39713, 46, CPU burst
