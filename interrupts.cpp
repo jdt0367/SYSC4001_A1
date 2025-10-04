@@ -9,6 +9,7 @@
  */
 
 #include"interrupts.hpp"
+#include<cmath>
 
 int main(int argc, char** argv) {
 
@@ -26,6 +27,7 @@ int main(int argc, char** argv) {
     std::string duration; //duration of current ISR
     int currTime = 0;
     int context = 10; //Duration of context save/restore
+    int ISR = 0; //0 = read, 1 = write
     /******************************************************************/
 
     //parse each line of the input trace file
@@ -41,23 +43,50 @@ int main(int argc, char** argv) {
             //do something with ISR????
             //store duration, then keep it until we get an END_IO call
         //if activity is END IO, switch out of kernel mode and output the end duration
+        //assume syscalls will alternate between reading and printing
 
         if(activity == "CPU"){
-            execution += std::to_string(currTime) + ", " + std::to_string(duration_intr) + ", CPU activity\n";
+            execution += std::to_string(currTime) + ", " + std::to_string(duration_intr) + ", CPU burst\n";
             currTime += duration_intr;
         }else if(activity == "SYSCALL"){
             execution += std::to_string(currTime) + ", " + std::to_string(1) + ", Checking if interrupts are enabled\n";
+            currTime++;
+            execution += std::to_string(currTime) + ", " + std::to_string(1) + ", Checking device flag\n";
             currTime++;
             std::pair<std::string, int> boilerRtn = intr_boilerplate(currTime, duration_intr, context, vectors);
             currTime = boilerRtn.second;
             execution += boilerRtn.first;
             //execute
-            execution += std::to_string(currTime) + ", " + std::to_string(delays[duration_intr]) + ", ISR activity\n";
+            if(ISR){
+                //writing
+                //push data to buffer 30%
+                execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.3)) + ", Pushing data from memory\n";
+                currTime += round(delays[duration_intr] * 0.3);
+                //set flag - printing in progress 10%
+                execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.1)) + ", Set device flag\n";
+                currTime += round(delays[duration_intr] * 0.1);
+                //call device driver 60%
+                execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.6)) + ", Call device driver\n";
+                currTime += round(delays[duration_intr] * 0.6);
+                ISR = 0;
+            } else {
+                //reading
+                //set flag - reading in progress 10%
+                execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.1)) + ", Set device flag\n";
+                currTime += round(delays[duration_intr] * 0.1);
+                //call device driver 50%
+                execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.5)) + ", Call device driver\n";
+                currTime += round(delays[duration_intr] * 0.6);
+                //read from buffer 40%
+                execution += std::to_string(currTime) + ", " + std::to_string(round(delays[duration_intr] * 0.4)) + ", Reading data to memory\n";
+                currTime += round(delays[duration_intr] * 0.3);
+                ISR = 1;
+            }
             currTime += delays[duration_intr];
         }else if(activity == "END_IO"){
             execution += std::to_string(currTime) + ", " + std::to_string(1) + ", IRET\n";
             currTime++;
-            execution += std::to_string(currTime) + ", " + std::to_string(delays[duration_intr]) + ", end of I/O " + std::to_string(duration_intr) + ": interrupt\n";
+            execution += std::to_string(currTime) + ", " + std::to_string(delays[duration_intr]) + ", Clearing flag for end of I/O " + std::to_string(duration_intr) + ": interrupt\n";
             currTime += delays[duration_intr];
         }
         /************************************************************************/
