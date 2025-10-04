@@ -2,6 +2,9 @@
  *
  * @file interrupts.cpp
  * @author Sasisekhar Govind
+ * 
+ * @author Jordan Trach
+ * @author Josh Weitzel
  *
  */
 
@@ -43,6 +46,8 @@ int main(int argc, char** argv) {
             execution += std::to_string(currTime) + ", " + std::to_string(duration_intr) + ", CPU activity\n";
             currTime += duration_intr;
         }else if(activity == "SYSCALL"){
+            execution += std::to_string(currTime) + ", " + std::to_string(1) + ", Checking if interrupts are enabled\n";
+            currTime++;
             std::pair<std::string, int> boilerRtn = intr_boilerplate(currTime, duration_intr, context, vectors);
             currTime = boilerRtn.second;
             execution += boilerRtn.first;
