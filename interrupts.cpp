@@ -81,12 +81,13 @@ int main(int argc, char** argv) {
                 currTime += round(delays[duration_intr] * 0.3);
                 ISR = 1;
             }
-            currTime += delays[duration_intr];
         }else if(activity == "END_IO"){
             execution += std::to_string(currTime) + ", " + std::to_string(1) + ", IRET\n";
             currTime++;
-            execution += std::to_string(currTime) + ", " + std::to_string(delays[duration_intr]) + ", Clearing flag for end of I/O " + std::to_string(duration_intr) + ": interrupt\n";
+            execution += std::to_string(currTime) + ", " + std::to_string(delays[duration_intr]) + ", END I/O\n";
             currTime += delays[duration_intr];
+            execution += std::to_string(currTime) + ", " + std::to_string(context) + ", Restore context\n";
+            currTime += context;
         }
         /************************************************************************/
     }
